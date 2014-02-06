@@ -36,8 +36,8 @@ class Page
                        .replace /[０-ｚ．]/g, ($0)->
                          String.fromCharCode(parseInt($0.charCodeAt(0))-65248)
       temps: {
-        min: $row.find('td.temp tr').eq(1).find('.min').text().trim().slice(0, -1) || '',
-        max: $row.find('td.temp tr').eq(1).find('.max').text().trim().slice(0, -1) || '',
+        min: $row.find('td.temp tr').eq(1).find('.min').text().trim().slice(0, -1) ? '',
+        max: $row.find('td.temp tr').eq(1).find('.max').text().trim().slice(0, -1) ? '',
       }
     }
 
