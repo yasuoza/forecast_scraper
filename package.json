@@ -5,11 +5,15 @@
   "dependencies": {
     "coffee-script": ">= 1.7",
     "request": "~2.33",
-    "cheerio": "~0.13"
+    "cheerio": "~0.13",
+    "async": "~0.2.10"
   },
   "devDependencies": {
     "mocha": "*",
     "expect.js": "*"
+  },
+  "scripts" : {
+    "test": "mocha --compilers coffee:coffee-script/register test/*_test.coffee"
   },
   "engine": "node >= 0.10"
 }
