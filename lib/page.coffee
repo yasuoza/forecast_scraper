@@ -1,8 +1,13 @@
 cheerio = require 'cheerio'
 
 class Page
-  constructor: (@html, @prefName)->
+  constructor: (@html, @prefId)->
     @$ = cheerio.load(@html)
+    @prefName = switch @prefId
+      when 1
+        '北海道'
+      when 47
+        '沖縄県'
 
   parse: (html=@html) ->
     @parsed ?= do (self=this) ->

@@ -5,16 +5,14 @@ Page    = require './page'
 ENDPOINT = 'http://www.jma.go.jp/jp/yoho'
 
 class Fetcher
-  constructor: (@pref_id) ->
-    @_request_pref_id = switch @pref_id
+  constructor: (@prefId) ->
+    @_request_pref_id = switch @prefId
       when 1
-        @_pref_name = '北海道'
         [301..306]
       when 47
-        @_pref_name = '沖縄県'
         [353..356]
       else
-        [@pref_id + 306]
+        [@prefId + 306]
 
   request: (request_pref_id, cb)->
     request request_pref_id, (error, response, body)->
@@ -25,7 +23,7 @@ class Fetcher
 
   fetch: (cb)->
     request_urls = ("#{ENDPOINT}/#{request_pref_id}.html" for request_pref_id in @_request_pref_id)
-    pref_name = @_pref_name
+    prefId = @prefId
     async.map request_urls, @request, (error, results) ->
       if error
         console.error error
@@ -33,7 +31,7 @@ class Fetcher
       else
         result = ''
         result += body for body in results
-        page = new Page(result, pref_name)
+        page = new Page(result, prefId)
         cb?(null, page)
 
 module.exports = Fetcher

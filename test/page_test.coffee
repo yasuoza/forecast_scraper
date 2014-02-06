@@ -18,7 +18,7 @@ describe 'Page', ->
     it 'should parse html data', ->
       htmlData = ""
       htmlData += fs.readFileSync("./test/fixtures/#{i}.html", 'utf8') for i in [301...307]
-      page = new Page(htmlData, '北海道')
+      page = new Page(htmlData, 1)
       data = page.parse()
       expect(data.pref).to.be '北海道'
       expect(data.areas[0].area).to.be '宗谷地方'
@@ -29,7 +29,7 @@ describe 'Page', ->
     it 'should parse html data', ->
       htmlData = ""
       htmlData += fs.readFileSync("./test/fixtures/#{i}.html", 'utf8') for i in [353...356]
-      page = new Page(htmlData, '沖縄県')
+      page = new Page(htmlData, 47)
       data = page.parse()
       expect(data.pref).to.be '沖縄県'
       expect(data.areas[0].area).to.be '本島中南部'

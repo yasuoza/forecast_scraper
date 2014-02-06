@@ -1,12 +1,11 @@
 expect  = require 'expect.js'
 Fetcher = require '../lib/fetcher'
 Page    = require '../lib/page'
-fs = require 'fs'
 
 describe 'Fetcher', ->
   it 'should fetch normal page', (done)->
     fetcher = new Fetcher(2)
-    expect(fetcher.pref_id).to.be 2
+    expect(fetcher.prefId).to.be 2
     fetcher.fetch (error, page)->
       expect(error).to.be null
       expect(page).to.be.a Page
@@ -17,7 +16,7 @@ describe 'Fetcher', ->
   it 'should fetch hokkaido page', (done)->
     @timeout(60 * 1000) # timeout 60s
     fetcher = new Fetcher(1)
-    expect(fetcher.pref_id).to.be 1
+    expect(fetcher.prefId).to.be 1
     fetcher.fetch (error, page)->
       expect(error).to.be null
       expect(page).to.be.a Page
@@ -28,7 +27,7 @@ describe 'Fetcher', ->
   it 'should fetch hokkaido page', (done)->
     @timeout(60 * 1000) # timeout 60s
     fetcher = new Fetcher(47)
-    expect(fetcher.pref_id).to.be 47
+    expect(fetcher.prefId).to.be 47
     fetcher.fetch (error, page)->
       expect(error).to.be null
       expect(page).to.be.a Page
