@@ -1,4 +1,4 @@
-class ForecastFetcher
+class ForecastScraper
   constructor: ->
     @Fetcher = require './lib/fetcher'
     @writer  = require './lib/file_writer'
@@ -6,4 +6,4 @@ class ForecastFetcher
   useWriter: (writer)->
     @writer = writer
 
-module.exports = new ForecastFetcher()
+module.exports = new ForecastScraper()

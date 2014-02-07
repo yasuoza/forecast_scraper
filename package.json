@@ -1,7 +1,7 @@
 {
-  "name": "forecast_fetcher",
-  "description": "A package using naive versioning",
-  "author": "A confused individual <iam@confused.com>",
+  "name": "forecast_scraper",
+  "description": "Forecast html scraper",
+  "author": "Yasuharu Ozaki <https://github.com/yasuoza>",
   "dependencies": {
     "coffee-script": ">= 1.7",
     "request": "~2.33",
