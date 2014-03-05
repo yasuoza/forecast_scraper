@@ -2,6 +2,10 @@
   "name": "forecast_scraper",
   "description": "Forecast html scraper",
   "author": "Yasuharu Ozaki <https://github.com/yasuoza>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yasuoza/forecast_scraper.git"
+  },
   "dependencies": {
     "coffee-script": ">= 1.7",
     "request": "~2.33",
